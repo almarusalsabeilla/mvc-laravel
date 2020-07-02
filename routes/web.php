@@ -14,7 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'HomeController@form');
+//Route::get('/', 'HomeController@form');
 Route::get('/register', 'AuthController@form');
 Route::post('/register', 'AuthController@welcome_pos');
 
+Route::get('/master', function() {
+    return view ('adminlte.master');
+});
+
+Route::get('/items', function() {
+    return view ('items.index');
+});
+
+Route::get('/items/create', function(){
+    return view('items.create');
+});
+
+Route::get('/', function(){
+    return view('items.home');
+});
+
+Route::get('/data-tables', function(){
+    return view('items.data-tables');
+});
